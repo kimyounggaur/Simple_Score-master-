@@ -1,0 +1,15 @@
+node_modules
+.next
+out
+dist
+.turbo
+.env*.local
+coverage
+*.tsbuildinfo
+playwright-report
+test-results
+dev-server.log
+.playwright-cli
+output
+packages/*/dist
+packages/*/src/**/*.d.ts

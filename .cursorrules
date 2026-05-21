@@ -1,0 +1,1 @@
+Harmony is a Next.js 15 + React 19 + TypeScript strict monorepo for a semantic music score editor. Keep score data semantic, route every edit through ScoreOperation, avoid `any`, and keep VexFlow usage behind renderer adapters.

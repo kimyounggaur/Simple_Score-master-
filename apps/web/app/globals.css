@@ -1,0 +1,75 @@
+@import "tailwindcss";
+
+:root {
+  --background: 248 250 252;
+  --foreground: 15 23 42;
+  --muted: 241 245 249;
+  --muted-foreground: 71 85 105;
+  --border: 203 213 225;
+  --accent: 20 184 166;
+  --accent-foreground: 240 253 250;
+  --danger: 220 38 38;
+  --staff: 30 41 59;
+}
+
+@theme inline {
+  --font-sans: var(--font-geist-sans);
+  --font-mono: var(--font-geist-mono);
+}
+
+* {
+  box-sizing: border-box;
+}
+
+html,
+body {
+  height: 100%;
+}
+
+body {
+  margin: 0;
+  color: rgb(var(--foreground));
+  background: rgb(var(--background));
+  font-family: Arial, Helvetica, sans-serif;
+}
+
+button,
+input,
+textarea,
+select {
+  font: inherit;
+}
+
+.score-scroll {
+  overscroll-behavior: contain;
+  touch-action: none;
+}
+
+.staff-line {
+  stroke: rgb(var(--staff));
+  stroke-width: 1;
+  vector-effect: non-scaling-stroke;
+}
+
+.note-head {
+  transition:
+    transform 120ms ease,
+    fill 120ms ease;
+}
+
+.note-head[data-selected="true"] {
+  fill: rgb(20 184 166);
+}
+
+@media (max-width: 767px) {
+  .desktop-only,
+  .tablet-up {
+    display: none !important;
+  }
+}
+
+@media (min-width: 768px) {
+  .mobile-only {
+    display: none !important;
+  }
+}

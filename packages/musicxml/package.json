@@ -1,0 +1,19 @@
+{
+  "name": "@harmony/musicxml",
+  "version": "0.1.0",
+  "private": true,
+  "type": "module",
+  "exports": {
+    ".": "./src/index.ts"
+  },
+  "scripts": {
+    "build": "tsc -p tsconfig.json",
+    "lint": "tsc -p tsconfig.json",
+    "typecheck": "tsc -p tsconfig.json",
+    "test": "vitest run"
+  },
+  "dependencies": {
+    "@harmony/notation-engine": "workspace:*",
+    "fast-xml-parser": "^5.2.0"
+  }
+}

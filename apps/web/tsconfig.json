@@ -1,0 +1,18 @@
+{
+  "extends": "../../tsconfig.base.json",
+  "compilerOptions": {
+    "baseUrl": ".",
+    "paths": {
+      "@/*": ["./*"],
+      "@harmony/notation-engine": ["../../packages/notation-engine/src/index.ts"],
+      "@harmony/renderer": ["../../packages/renderer/src/index.ts"],
+      "@harmony/audio": ["../../packages/audio/src/index.ts"],
+      "@harmony/musicxml": ["../../packages/musicxml/src/index.ts"],
+      "@harmony/shared-types": ["../../packages/shared-types/src/index.ts"]
+    },
+    "plugins": [{ "name": "next" }],
+    "tsBuildInfoFile": ".next/cache/tsconfig.tsbuildinfo"
+  },
+  "include": ["next-env.d.ts", "**/*.ts", "**/*.tsx", ".next/types/**/*.ts"],
+  "exclude": ["node_modules"]
+}
