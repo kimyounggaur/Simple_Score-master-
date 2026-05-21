@@ -52,11 +52,31 @@ export function TopBar({ onOpenCommand, onOpenImport }: TopBarProps) {
 
   return (
     <header className="flex h-14 shrink-0 items-center gap-2 border-b border-slate-200 bg-white px-3">
-      <div className="mobile-only">
-        <Button aria-label={t("mobile.menu")} size="icon" variant="ghost">
-          <Menu className="h-4 w-4" />
-        </Button>
-      </div>
+      <DropdownMenu>
+        <DropdownMenuTrigger asChild>
+          <Button aria-label={t("mobile.menu")} className="mobile-only" size="icon" variant="ghost">
+            <Menu className="h-4 w-4" />
+          </Button>
+        </DropdownMenuTrigger>
+        <DropdownMenuContent align="start">
+          <DropdownMenuItem onSelect={onOpenCommand}>
+            <Search className="h-4 w-4" />
+            {t("top.command")}
+          </DropdownMenuItem>
+          <DropdownMenuItem onSelect={onOpenImport}>
+            <FileInput className="h-4 w-4" />
+            {t("command.importMusicXml")}
+          </DropdownMenuItem>
+          <DropdownMenuItem onSelect={() => void shareScoreLink(score).then(() => toast.success(t("share.copied")))}>
+            <Share2 className="h-4 w-4" />
+            {t("top.share")}
+          </DropdownMenuItem>
+          <DropdownMenuItem onSelect={toggleZenMode}>
+            <Maximize2 className="h-4 w-4" />
+            {t("top.zen")}
+          </DropdownMenuItem>
+        </DropdownMenuContent>
+      </DropdownMenu>
       <Input
         aria-label={t("panel.title")}
         className="h-9 max-w-64 border-transparent bg-transparent px-1 text-base font-semibold focus:border-slate-200"
